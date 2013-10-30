@@ -1,4 +1,4 @@
-# heroku-buildpack-timing
+# heroku-buildpack-timings
 
 Use [multiple buildpacks on your app](https://github.com/ddollar/heroku-buildpack-multi) **+ get timings!**
 
