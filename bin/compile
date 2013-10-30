@@ -10,6 +10,8 @@ function indent() {
   esac
 }
 
+BIN_DIR=$(dirname $0)
+
 unset GIT_DIR
 
 for BUILDPACK in $(cat $1/.buildpacks); do
@@ -45,7 +47,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
 
     if [ $? == 0 ]; then
       echo "=====> Detected Framework: $framework"
-      $dir/bin/compile $1 $2
+      $dir/bin/compile $1 $2 2>&1 | $BIN_DIR/timecat
 
       if [ $? != 0 ]; then
         exit 1
